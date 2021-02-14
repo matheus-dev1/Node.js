@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <!-- Isto eh codigo JavaScript -->
+    <!-- Neste caso nos estamos fazendo a INCLUSAO/IMPORT desta pagina/componente -->
+    <%- include('../partials/header') %>
+
+    <p>
+        <%= dados[0].conteudo %> (<%= dados[0].categoria %>) [Conteudo mais recente]
+    </p>
+      
+    <% for(index = 1; index < dados.length; index++) { %>
+        <p>
+             <%= dados[index].conteudo %> 
+            (<%= dados[index].categoria %>)
+        </p>
+    <% } %>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

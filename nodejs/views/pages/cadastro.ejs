@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <!-- Isto eh codigo JavaScript -->
+    <!-- Neste caso nos estamos fazendo a INCLUSAO/IMPORT desta pagina/componente -->
+    <%- include('../partials/header') %>
+
+    <h1>
+        Registrar
+    </h1>
+
+    <form method="post" action="/cadastro/salvar">
+
+        <label for="categoria">Categoria: </label>
+      
+        <select name="categoria">
+            <option value="frontend">Frontend</option>
+            <option value="backend">Backend</option>
+        </select>
+
+        <input type="text" name="conteudo" placeholder="Conteudo: "/>
+        <input type="submit" value="Enviar"/>
+    </form>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

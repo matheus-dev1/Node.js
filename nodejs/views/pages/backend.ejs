@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+    <h1>
+        Backend
+    </h1>
+    
+    <% for(index = 0; index < dados.length; index++) { %>
+        <p>
+            <%= dados[index].conteudo %>
+        </p>
+    <% } %>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

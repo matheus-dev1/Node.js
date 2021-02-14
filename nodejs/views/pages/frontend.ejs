@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body>
+    <!-- Isto eh codigo JavaScript -->
+    <!-- Neste caso nos estamos fazendo a INCLUSAO/IMPORT desta pagina/componente -->
+    <!-- Quando se trata de importacao nos temos que usar o tracinho (-) -->
+    <%- include('../partials/header') %>
+
+    <h1>
+        Frontend
+    </h1>
+
+    <% for(index = 0; index < dados.length; index++) { %>
+        <p>
+            <%= dados[index].conteudo %>
+        </p>
+    <% } %>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
