@@ -1,3 +1,9 @@
+// Estrutura MVC do projeto nodejs
+
+// Model - /models
+// Views - /views
+// Controller - /routes
+
 // DEPENDENCIAS
 // O express gerencia as rotas e requisicoes da URL.
 // Os meus Models
@@ -10,6 +16,10 @@ const bodyParser = require('body-parser')
 // O Consign gerencia os caminhos dos arquivos, tanto de configuração, quanto de visualizações.
 const consign = require('consign')
 
+// Aqui eu estou instanciando duas funcoes da dependencia express validador que valida dados vindo das rotas express, ou seja, das paginas(views).
+// Obs: Todo arquivo que precisa usar estas funcoes necessita importa-la. Ela nao esta no "app".
+const { check, validationResult } = require('express-validator')
+
 // CONFIGURACOES
 // Como express e uma funcao ele possui seus metodo entao devemos atribuir ele a uma variavel.
 const app = express()
@@ -19,7 +29,9 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 
 // Usando o metodo use do meu servidor app, para configurar o trafego de inforamcoes para JSON.
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({
+  extended: true 
+}))
 
 // O consign faz o import de varios arquivos ao meu "app" fazendo com que se por exemplo em uma rota eu precise colocar o arquivo de conexao com o banco de daos eu apenas faco assim: app.config.database(), facilitando a sua importacao e usabilidade em todos os arquivos do meu projeto.
 consign()

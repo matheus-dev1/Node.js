@@ -12,15 +12,24 @@
         Registrar
     </h1>
 
-    <form method="post" action="/cadastro/salvar">
+    <!-- Se o parametro "validacao" estiver vazio ele nao faz nada!-->
+    <!-- Agora se o parametro "validacao" nao estiver vazio entao ele executa este if e for com os parametro "validacao" e "errors" -->
+    <!-- Obs: este campo if(validacao) apenas funciona se eu nao usar nenhum operador logico como teste, o que significa que ele esta verificando se "validacao" == true -->
+    <% if(validacao) { %>
+        <% for(index = 0; index < validacao.errors.length; index++){ %>
+            <!-- .msg e um objeto de "errors" que capta o segundo parametro do metodo check(), e exibe aqui na tag <p/> -->
+            <p> <%= validacao.errors[index].msg %> </p>
+        <% } %>
+    <% } %>
 
+    <form method="post" action="/cadastro/salvar">
         <label for="categoria">Categoria: </label>
-      
         <select name="categoria">
             <option value="frontend">Frontend</option>
             <option value="backend">Backend</option>
         </select>
 
+        <!-- Na propriedade value="" no ciclo ocorre assim: Se ocorrer um erro eu vou retonar o que o usuario JA TINHA ESCRITO ERRADO para que o campo nao se limpe se estiver errado!!!-->
         <input type="text" name="conteudo" placeholder="Conteudo: "/>
         <input type="submit" value="Enviar"/>
     </form>

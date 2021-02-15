@@ -9,6 +9,7 @@ module.exports = function () {
       connection.query('SELECT * FROM conteudo', callback)
     }
   
+    // O this aqui eh para garantir que esta funcao/metodo e este modulo e nao de outro!
     this.getConteudoRecente = function(connection, callback) {
       connection.query('SELECT * FROM conteudo ORDER BY id DESC LIMIT 3', callback)
     }
@@ -27,7 +28,5 @@ module.exports = function () {
             callback
         )
     }
-  
     return this
   }
-  
