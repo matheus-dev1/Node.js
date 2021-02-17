@@ -1,0 +1,83 @@
+#red_title{
+    color:red;
+    font-size: larger;
+}
+
+#formas_pagamento {
+    color: red;
+    text-align: center;
+}
+
+
+
+.menu img {
+    margin: 0px 150px;
+}
+
+.itensMenu {
+    text-decoration: none;
+    color: white;
+    padding: 0px 150px;
+    vertical-align: 100%;
+}
+
+#contatos{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#contatos div {
+    display: inline-block;
+}
+
+.line_separation {
+  border-left: 1px solid lightgray;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 100%;
+}
+
+.recode {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.formulario input, label, textarea {
+    margin-left: 25px;
+    --border-radius: 5px;
+}
+
+.lojas {
+    text-align: center;
+    display: inline-block;
+    margin: 0px 20px 20px 0px;
+}
+
+#main_index {
+    text-align: center;
+}
+
+.div_produtos {
+    display: inline-block;
+}
+
+.categorias {
+    position: absolute;
+    top: 150px;
+    left: 25px;
+}
+.espaco_produtos {
+    padding-left: 20%;
+}
+
+.menor_preco {
+    color: red;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.espaco_interno {
+    padding: 8px;
+    margin-left: 1%;
+    border-radius: 0px 20px 0 20px;
+}

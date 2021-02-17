@@ -1,0 +1,22 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    --border: 1px solid green;
+    box-sizing: border-box;
+    /*O espacamento externo fica restrito ao conteudo do elemento (padding e margin)*/
+}
+
+.navegacao {
+	float:left;
+	width: 150px;
+	background:#eee;
+	margin-left:-720px;
+}
+
+.preco {
+    color: red;
+    font-weight: bolder;
+    font-size: large;
+}

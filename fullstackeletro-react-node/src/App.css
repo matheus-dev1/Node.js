@@ -1,0 +1,26 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    --border: 1px solid green;
+    box-sizing: border-box;
+    /*O espacamento externo fica restrito ao conteudo do elemento (padding e margin)*/
+}
+
+.btn-fs {
+    /* color: white; */
+    background-image: linear-gradient(to right, #FF6347, #FF0000);
+}
+
+/* .Header {
+    height: 10vh;
+} */
+
+/* .Footer {
+    height: 40vh
+} */
+
+/* .MainContent {
+    height: 40vh;
+} */

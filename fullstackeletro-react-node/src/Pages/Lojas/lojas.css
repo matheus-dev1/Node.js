@@ -1,0 +1,9 @@
+.resize-img {
+    width: 100px;
+    height: 70px;
+}
+
+.btn-fs {
+    /* color: white; */
+    background-image: linear-gradient(to right, #FF6347, #FF0000);
+}
