@@ -11,8 +11,9 @@ function Produtos() {
   let [produtos, setProdutos] = React.useState([]);
   let [renderProdutos, setRenderProdutos] = React.useState(false);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   React.useEffect(async () => {
-    const url = "http://localhost/dashboard/PHP%20Projects/fullstackeletro-react-php/Backend/Produtos/index.php";
+    const url = "http://localhost:3333/produtos";
     const response = await fetch(url);
     const data = await response.json();
     setProdutos(data);
@@ -69,7 +70,6 @@ function Produtos() {
                         <div className=" card d-inline-block ml-5">
                             <div className="card-body" key={element.idproduto}>
                                 <img className="card-img-top" onMouseEnter={enter} onMouseLeave={out} src={require(`../../imgs/Produtos/${element.imagem}`).default} alt={element.descricao}></img>
-
                                 <h5 className="card-title">{element.descricao}</h5>
                                 <p className="card-text preco">De: <strike>R$ {element.preco}</strike></p>
                                 <p className="card-text">Por: R$ {element.precofinal}</p>

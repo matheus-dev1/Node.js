@@ -1,4 +1,4 @@
-module.exports = function (app) {
+module.exports = function(app) {
     app.get('/backend', function (request, response) {
       const connection = app.config.database()
       const query = app.models.conteudo

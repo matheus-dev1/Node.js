@@ -12,8 +12,14 @@ function Contato() {
   let [renderMensagens, setRenderMensagens] = React.useState(false);
   let [alert, setAlert] = React.useState(false);
 
+  let [nomeState, setNome] = React.useState("");
+  let [emailState, setEmail] = React.useState("");
+  let [assuntoState, setAssunto] = React.useState("");
+  let [mensagemState, setMensagem] = React.useState("");
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   React.useEffect(async () => {
-    const url = "http://localhost/dashboard/PHP%20Projects/fullstackeletro-react-php/Backend/Contato/index.php"
+    const url = "http://localhost:3333/mensagem"
     const response = await fetch(url);
     const data = await response.json();
     setMensagens(data);
@@ -22,12 +28,17 @@ function Contato() {
 
   function mensagemRegister(event) {
     event.preventDefault();
-    let formData = new FormData(event.target);
-    const url = "http://localhost/dashboard/PHP%20Projects/fullstackeletro-react-php/Backend/Contato/register-mensagem.php";
-
+    let form = {
+      nome: nomeState,
+      email: emailState,
+      assunto: assuntoState,
+      mensagem: mensagemState
+    }
+    const url = "http://localhost:3333/mensagem";
     fetch(url, {
       method: "POST",
-      body: formData
+      headers: { "Content-Type": "application/json"},
+      body: JSON.stringify(form)
       })
         .then((response) => response.json())
         .then((dados) => {
@@ -76,14 +87,14 @@ function Contato() {
               <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">Nome:</span>
               </div>
-              <input className="form-control" aria-describedby="nameHelp" type="text" name="nome" id="nome" placeholder="Exemplo: Matheus de Oliveira Silva"></input>
+              <input className="form-control" aria-describedby="nameHelp" type="text" name="nome" id="nome" placeholder="Exemplo: Matheus de Oliveira Silva" value={nomeState} onChange={event => setNome(event.target.value)}></input>
           </div>
 
           <div className="form-group input-group">
               <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">E-mail:</span>
               </div>
-              <input className="form-control" type="email" name="email" id="email" placeholder="Exemplo: exemplo@exemplo.com"></input>
+              <input className="form-control" type="email" name="email" id="email" placeholder="Exemplo: exemplo@exemplo.com" value={emailState} onChange={event => setEmail(event.target.value)}></input>
           </div>
 
           <div className="form-group input-group">
@@ -91,7 +102,7 @@ function Contato() {
                   <span className="input-group-text" id="basic-addon1">Assunto:</span>
               </div>
 
-              <select className="form-control" name="assunto" id="assunto">
+              <select className="form-control" name="assunto" id="assunto" onChange={event => setAssunto(event.target.value)}>
                   <option value="elogio">Exemplo: Elogio</option>
                   <option value="elogio">Elogio</option>
                   <option value="relamacao">Relamacao</option>
@@ -104,7 +115,7 @@ function Contato() {
               <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">Assunto:</span>
               </div>
-              <textarea className="form-control" name="mensagem" id="mensagem" cols="40" rows="2" placeholder="Exemplo: Otima lista de produtos"></textarea>
+              <textarea className="form-control" name="mensagem" id="mensagem" cols="40" rows="2" placeholder="Exemplo: Otima lista de produtos" onChange={event => setMensagem(event.target.value)}></textarea>
           </div>
 
           <button className="btn btn-fs text-light form-control mb-3">Enviar</button>
