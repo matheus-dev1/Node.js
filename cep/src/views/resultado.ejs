@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card mt-2 mb-2">
+            <div class="card-body">
+                <h5>Resultado Cep</h5>
+                <b>Cep: </b><%= dados.cep %><br />
+                <b>Logradouro: </b><%= dados.logradouro %><br />
+                <b>Complemento: </b><%= dados.complemento %><br />
+                <b>Bairro: </b><%= dados.bairro %><br />
+                <b>Localidade: </b><%= dados.localidade %><br />
+                <b>UF: </b><%= dados.uf %><br />
+                <b>IBGE: </b><%= dados.ibge %><br />
+                <b>GIA: </b><%= dados.gia %><br />
+                <b>DDD: </b><%= dados.ddd %><br />
+                <b>Siafi: </b><%= dados.siafi %>
+            </div>
+        </div>
+        <a href="/" class=" btn btn-outline-dark">Procurar outro endereco</a>
+    </div>
+</body>
+</html>
